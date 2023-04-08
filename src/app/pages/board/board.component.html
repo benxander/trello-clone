@@ -11,7 +11,9 @@
 						<h3 class="text-sm font-bold ml-2">{{ col.title }}</h3>
 					</div>
 					<div class="text-sm mt-2 min-h-[2.5rem]" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="col.todos">
-						<div *ngFor="let todo of col.todos" cdkDrag
+						<div
+							(click)="openDialog(todo)"
+							*ngFor="let todo of col.todos" cdkDrag
 							class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400">
 							{{ todo.title }}
 						</div>
